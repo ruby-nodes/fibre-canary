@@ -84,19 +84,28 @@ below — all you need is Go 1.26.6, or a Go that can fetch it as a toolchain.
      [Celestia's Discord](https://discord.com/invite/YsnTPcSfWQ).
    - On Mainnet, it's real TIA — fund the key the way you normally would.
 
-   Then deposit a small amount into Fibre escrow:
+   Then deposit into Fibre escrow:
 
    ```sh
-   celestia-appd tx fibre deposit-to-escrow 10000utia \
+   celestia-appd tx fibre deposit-to-escrow 1000000utia \
      --from fibre-canary \
      --keyring-backend file \
      --keyring-dir /var/lib/fibre-canary/keyring \
      --chain-id mocha-5 \
-     --node http://127.0.0.1:26657
+     --node http://127.0.0.1:26657 \
+     --gas auto --gas-adjustment 1.3 --gas-prices 0.004utia
    ```
 
-   A small amount is enough — `fibre-canary` publishes tiny payloads and
-   `preflight` will tell you if the escrow ever runs low.
+   The `--gas-prices` value must meet or exceed the target node's configured
+   `minimum-gas-prices` (0.004utia is the chain default); `--gas auto`
+   estimates the gas needed instead of relying on the CLI's low default gas
+   limit, which otherwise produces an "insufficient fee" or "out of gas"
+   error.
+
+   Fibre charges a protocol-fixed minimum of ~695000 utia per blob regardless
+   of payload size, so the deposit must clear that floor even though
+   `fibre-canary` publishes tiny payloads; `preflight` will tell you if the
+   escrow ever runs low.
 
 Never put a mnemonic, private key, passphrase, token, or credential-bearing
 endpoint into `config.toml` or on the command line. Keyring unlock input is
@@ -142,7 +151,10 @@ payload_bytes = 1024
 # Safety ceiling for payload_bytes. The tool itself also caps this at 1 MiB.
 max_payload_bytes = 4096
 # This bounds Fibre payment only. It is not a transaction-fee ceiling.
-max_payment_utia = "10000"
+# Fibre charges a protocol-fixed minimum of 695000 utia per blob (650000 fixed
+# + 45000 per 256 KiB chunk, at least one chunk) regardless of payload size,
+# so this must stay comfortably above that floor or every run will fail here.
+max_payment_utia = "750000"
 # Local safety limit: refuses more than this many paid runs per UTC day.
 max_runs_per_day = 1
 # Maximum time allowed for one preflight or run call.

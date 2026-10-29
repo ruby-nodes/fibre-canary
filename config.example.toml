@@ -28,7 +28,10 @@ payload_bytes = 1024
 # Safety ceiling for payload_bytes. The tool itself also caps this at 1 MiB.
 max_payload_bytes = 4096
 # This bounds Fibre payment only. It is not a transaction-fee ceiling.
-max_payment_utia = "10000"
+# Fibre charges a protocol-fixed minimum of 695000 utia per blob (650000 fixed
+# + 45000 per 256 KiB chunk, at least one chunk) regardless of payload size,
+# so this must stay comfortably above that floor or every run will fail here.
+max_payment_utia = "750000"
 # Local safety limit: refuses more than this many paid runs per UTC day.
 max_runs_per_day = 1
 # Maximum time allowed for one preflight or run call.
