@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"example.com/fibre-canary/internal/canary"
-	"example.com/fibre-canary/internal/config"
-	"example.com/fibre-canary/internal/receipt"
+	"github.com/ruby-nodes/fibre-canary/internal/canary"
+	"github.com/ruby-nodes/fibre-canary/internal/config"
+	"github.com/ruby-nodes/fibre-canary/internal/receipt"
 )
 
 func TestHelpIsUseful(t *testing.T) {

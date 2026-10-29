@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"example.com/fibre-canary/internal/receipt"
+	"github.com/ruby-nodes/fibre-canary/internal/receipt"
 )
 
 func TestRunWritesStartedImmediatelyBeforePut(t *testing.T) {

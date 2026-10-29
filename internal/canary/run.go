@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"time"
 
-	"example.com/fibre-canary/internal/receipt"
+	"github.com/ruby-nodes/fibre-canary/internal/receipt"
 )
 
 type RunOptions struct {

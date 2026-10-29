@@ -9,12 +9,12 @@ import (
 	"os"
 	"time"
 
-	"example.com/fibre-canary/internal/buildinfo"
-	"example.com/fibre-canary/internal/canary"
-	celestiaclient "example.com/fibre-canary/internal/celestia"
-	"example.com/fibre-canary/internal/config"
-	"example.com/fibre-canary/internal/receipt"
-	"example.com/fibre-canary/internal/redact"
+	"github.com/ruby-nodes/fibre-canary/internal/buildinfo"
+	"github.com/ruby-nodes/fibre-canary/internal/canary"
+	celestiaclient "github.com/ruby-nodes/fibre-canary/internal/celestia"
+	"github.com/ruby-nodes/fibre-canary/internal/config"
+	"github.com/ruby-nodes/fibre-canary/internal/receipt"
+	"github.com/ruby-nodes/fibre-canary/internal/redact"
 )
 
 const scopeNotice = "This verifies one publisher path from %s.\nIt is not a global Fibre availability measurement.\n"

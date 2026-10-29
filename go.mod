@@ -1,4 +1,4 @@
-module example.com/fibre-canary
+module github.com/ruby-nodes/fibre-canary
 
 go 1.26.6
 

@@ -10,9 +10,6 @@ import (
 	"io"
 	"runtime/debug"
 
-	"example.com/fibre-canary/internal/buildinfo"
-	"example.com/fibre-canary/internal/canary"
-	"example.com/fibre-canary/internal/config"
 	"github.com/celestiaorg/celestia-app/v10/app"
 	appencoding "github.com/celestiaorg/celestia-app/v10/app/encoding"
 	"github.com/celestiaorg/celestia-app/v10/fibre"
@@ -22,6 +19,9 @@ import (
 	"github.com/celestiaorg/go-square/v4/share"
 	tmservice "github.com/cosmos/cosmos-sdk/client/grpc/cmtservice"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
+	"github.com/ruby-nodes/fibre-canary/internal/buildinfo"
+	"github.com/ruby-nodes/fibre-canary/internal/canary"
+	"github.com/ruby-nodes/fibre-canary/internal/config"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )

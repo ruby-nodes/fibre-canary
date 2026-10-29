@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"example.com/fibre-canary/internal/buildinfo"
-	"example.com/fibre-canary/internal/redact"
 	"github.com/BurntSushi/toml"
+	"github.com/ruby-nodes/fibre-canary/internal/buildinfo"
+	"github.com/ruby-nodes/fibre-canary/internal/redact"
 )
 
 const (

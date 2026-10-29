@@ -75,7 +75,7 @@ Acceptance criteria:
 - [x] Add `config.example.toml` and README setup/run instructions.
 - [x] Document operational fee bounding and duplicate-charge crash risk.
 - [x] Document the one-vantage/non-global claim.
-- [ ] Run one opt-in live Mocha smoke test.
+- [x] Run one opt-in live Mocha smoke test.
 - [x] Publish a sanitized example receipt.
 - [x] Build a reproducible Linux binary with checksum.
 
