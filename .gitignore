@@ -1,0 +1,20 @@
+# Build artifacts (see `make build` / `make release-linux-amd64`)
+/fibre-canary
+/dist/
+
+# Operator-specific configuration copied from config.example.toml; never commit it.
+/config.toml
+
+# Local test/coverage output
+*.test
+*.out
+coverage.*
+
+# Go module vendoring, if ever enabled locally
+/vendor/
+
+# Editor and OS cruft
+.vscode/
+.idea/
+*.swp
+.DS_Store

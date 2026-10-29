@@ -1,0 +1,15 @@
+config_version = 1
+network = "mocha"
+chain_id = "mocha-5"
+vantage = "test-vantage"
+app_grpc_address = "127.0.0.1:9090"
+data_dir = "/tmp/fibre-canary-test"
+key_name = "fibre-canary-test"
+keyring_backend = "file"
+keyring_dir = "/tmp/fibre-canary-test/keyring"
+namespace_hex = "0000000000000000000000000000000000000000000000000000cafe"
+payload_bytes = 1024
+max_payload_bytes = 4096
+max_payment_utia = "10000"
+max_runs_per_day = 1
+operation_timeout = "2m"

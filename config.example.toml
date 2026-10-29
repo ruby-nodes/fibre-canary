@@ -1,0 +1,35 @@
+# fibre-canary configuration schema v1. Copy this file to config.toml.
+# Never put a mnemonic, private key, passphrase, token, or endpoint credentials here.
+config_version = 1
+# This build also accepts network = "mainnet", chain_id = "celestia". On
+# mainnet max_payment_utia and max_runs_per_day bound real TIA, not testnet
+# funds, so size them deliberately.
+network = "mocha"
+chain_id = "mocha-5"
+# A short label for where this canary runs from, e.g. a city or node name.
+# It's only used in output and receipts, not for anything functional.
+vantage = "ruby-nodes-prague"
+
+# A trusted Celestia app gRPC endpoint: host:port only, no scheme, no credentials.
+app_grpc_address = "127.0.0.1:9090"
+# Keep this directory on persistent local storage; receipts enforce crash safety.
+data_dir = "/var/lib/fibre-canary"
+
+# Create this key in the selected Cosmos SDK keyring before running preflight.
+key_name = "fibre-canary"
+keyring_backend = "file"
+keyring_dir = "/var/lib/fibre-canary/keyring"
+
+# A 28-byte (56 hex characters) namespace reserved for this canary's test
+# payloads. The default below is fine to reuse as-is.
+namespace_hex = "0000000000000000000000000000000000000000000000000000cafe"
+# Size of the payload this canary publishes and verifies, in bytes.
+payload_bytes = 1024
+# Safety ceiling for payload_bytes. The tool itself also caps this at 1 MiB.
+max_payload_bytes = 4096
+# This bounds Fibre payment only. It is not a transaction-fee ceiling.
+max_payment_utia = "10000"
+# Local safety limit: refuses more than this many paid runs per UTC day.
+max_runs_per_day = 1
+# Maximum time allowed for one preflight or run call.
+operation_timeout = "2m"

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "run_id": "20261029T120000.000000000Z-0123456789abcdef",
+  "status": "succeeded",
+  "network": "mocha",
+  "chain_id": "mocha-5",
+  "vantage": "example-operator-eu",
+  "account": "celestia1examplepublicaccount000000000000000",
+  "client_version": "v10.4.0-mocha",
+  "created_at": "2026-10-29T12:00:00Z",
+  "updated_at": "2026-10-29T12:00:08Z",
+  "payload_sha256": "4f86518bb0c8e19c3fbc07f8ef7c4429dc88dd519a50b90b6127e456ba31a068",
+  "payload_bytes": 1024,
+  "download_sha256": "4f86518bb0c8e19c3fbc07f8ef7c4429dc88dd519a50b90b6127e456ba31a068",
+  "download_bytes": 1024,
+  "expected_payment_utia": "1000",
+  "put_duration_millis": 6123,
+  "download_duration_millis": 1456,
+  "blob_id": "00aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "tx_hash": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+  "settlement_height": 123456
+}

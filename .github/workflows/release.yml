@@ -1,0 +1,39 @@
+name: Release
+
+# Push a tag like "v0.1.0" to trigger this: it builds and checksums the
+# release binaries for every supported platform and publishes them as
+# assets on a GitHub Release named after the tag. No manual build or
+# upload step is required.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Run checks
+        run: make check
+
+      - name: Build release binaries
+        run: make release
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" dist/* \
+            --title "${{ github.ref_name }}" \
+            --generate-notes
