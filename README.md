@@ -37,10 +37,8 @@ Any other network is rejected before any network or keyring work happens.
 That's deliberate: it means this tool can never end up quietly talking to a
 chain nobody has checked it against.
 
-Celestia doesn't ship a new `celestia-app` version every week, so you won't
-need to update `fibre-canary` every week either. A new version is only
-needed when Mocha and Mainnet themselves move to a newer `celestia-app`
-release — watch this project's releases for that.
+Watch this project's releases for updates when Mocha or Mainnet move to a
+newer `celestia-app` version, or when a newer Fibre client includes a fix.
 
 ## Get fibre-canary
 
@@ -55,7 +53,7 @@ sha256sum -c fibre-canary-linux-amd64.sha256
 
 If you'd rather build it yourself (to inspect the code first, or because
 there's no release for your platform), see [Build and run](#build-and-run)
-below — all you need is Go 1.26.6, or a Go that can fetch it as a toolchain.
+below — all you need is Go 1.26.10, or a Go that can fetch it as a toolchain.
 
 ## Set up an account
 

@@ -9,8 +9,8 @@ const (
 	ConfigVersion = 1
 
 	CelestiaAppModule  = "github.com/celestiaorg/celestia-app/v10"
-	CelestiaAppVersion = "v10.4.0"
-	CelestiaAppCommit  = "5187d2fb5eb8bc4b534c74724882943c54253ae9"
+	CelestiaAppVersion = "v10.6.0"
+	CelestiaAppCommit  = "25f09cab3f8912bbe78c62909e8d39d8fa8b3fc0"
 )
 
 // Chain is one network/chain-id pair this build is allowed to run against.
